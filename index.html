@@ -5,14 +5,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprendiendo git</title>
+    <title>Results Summary Component</title>
     <link rel="stylesheet" href="styles-minify.css">
 </head>
 
 <body>
-    <h1>prueba extrabold</h1>
-    <h2>prueba bold</h2>
-    <h3>prueba medium</h3>
+    <header class="header">
+        <p>your result</p>
+        <div class="result-container">
+            <span>76</span>
+            <p>of 100</p>
+        </div>
+        <h1>great</h1>
+        <p class="paragraph">you scored higher than <span>65</span>% of the people who have taken these tests.
+        </p>
+    </header>
+    <main class="main">
+        <section class="section">
+            <h2 class="title-section">Summary</h2>
+            <article class="article">
+                <header>
+                    <img src="assets/svg/icon-reaction.svg" alt="">
+                    <h3>reaction</h3>
+                </header>
+                <p><span>80</span> / 100</p>
+            </article>
+            <article class="article">
+                <header>
+                    <img src="assets/svg/icon-memory.svg" alt="">
+                    <h3>memory</h3>
+                </header>
+                <p><span>92</span> / 100</p>
+            </article>
+            <article class="article">
+                <header>
+                    <img src="assets/svg/icon-verbal.svg" alt="">
+                    <h3>verbal</h3>
+                </header>
+                <p><span>61</span> / 100</p>
+            </article>
+            <article class="article">
+                <header>
+                    <img src="assets/svg/icon-visual.svg" alt="">
+                    <h3>visual</h3>
+                </header>
+                <p><span>72</span> / 100</p>
+            </article>
+            <form>
+                <input type="button" value="Continue" name="button-continue" class="btn-continue">
+            </form>
+        </section>
+    </main>
 </body>
 
 </html>

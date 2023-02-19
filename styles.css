@@ -100,7 +100,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, var(--light-royal-blue-background) 65%, var(--light-slate-blue-background) 100%);
+    background: var(--gradient-2);
 }
 
 .result-container span {
@@ -170,6 +170,7 @@
 .article header {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
 }
 
 .article header h3 {
@@ -236,14 +237,15 @@
     }
 
     .header {
-        min-height: 31.25rem;
+        min-height:31.875rem;
         width: 23rem;
         border-radius: 2.25rem;
         position: relative;
         z-index: 5;
         margin: 2rem 0 2rem 2rem;
-        justify-content: space-evenly;
+        justify-content: space-between;
         gap: 0;
+        padding: 2.5rem 3.75rem 3.75rem;
     }
 
     .header h1 {
@@ -254,7 +256,7 @@
         padding: 2.5rem;
         margin: 2rem 2rem 2rem 0;
         position: relative;
-        min-height: 31.25rem;
+        min-height: 31.875rem;
         width: 23rem;
         background-color: var(--white);
         box-shadow: 1rem 1rem 3.125rem -1rem var(--light-lavender);
@@ -293,7 +295,6 @@
     .result-container {
         height: 12.5rem;
         width: 12.5rem;
-        background: var(--gradient-2);
         font-size: 1.2rem;
     }
 

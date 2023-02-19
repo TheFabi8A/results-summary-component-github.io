@@ -1,36 +1,25 @@
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-    /* primary */
     --light-red: hsl(0deg 100% 67%);
     --orangey-yellow: hsl(39deg 100% 56%);
     --green-teal: hsl(166deg 100% 37%);
     --cobalt-blue: hsl(234deg 85% 45%);
-
-    /* gradients */
     --light-slate-blue-background: hsl(252deg 100% 67%);
     --light-royal-blue-background: hsl(241deg 81% 54%);
     --violet-blue-circle: hsla(256deg 72% 46% 100%);
     --persian-blue-circle: hsla(241deg 72% 46% 0%);
-
-    /* neutral */
     --white: hsl(0deg 0% 100%);
     --pale-blue: hsl(221deg 100% 96%);
     --light-lavender: hsl(241deg 100% 89%);
     --dark-gray-blue: hsl(224deg 30% 27%);
-
-    /* Use transparency to get the colour variations necessary to match the design. Hint: look into using `hsla()`. */
-
-    /* font-size on paragraphs: 18px */
     --font-800: "HankenGroteskExtraBold", sans-serif;
     --font-700: "HankenGroteskBold", sans-serif;
     --font-500: "HankenGroteskMedium", sans-serif;
-
-    /* gradients variables */
     --gradient-1: linear-gradient(to top, var(--light-royal-blue-background), var(--light-slate-blue-background));
     --gradient-2: linear-gradient(to bottom, var(--light-royal-blue-background), var(--light-slate-blue-background));
 }
@@ -62,38 +51,34 @@
     font-display: swap;
 }
 
-body {
-    background-color: var(--white);
-}
-
 .header {
     background: var(--gradient-1);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1rem 3.75rem 2.5rem;
+    padding: 1rem 2.8rem 2.5rem;
     gap: 1rem;
     color: var(--white);
     border-radius: 0 0 2.25rem 2.25rem;
 }
 
 .result-container p {
-    font-size: 1rem;
     font-family: var(--font-500);
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
-.header p:first-child {
+.text {
     font-family: var(--font-700);
     text-transform: capitalize;
     font-size: 1.25rem;
+    opacity: 0.7;
 }
 
 .header .paragraph {
-    opacity: 0.5;
+    opacity: 0.7;
     font-family: var(--font-500);
-    font-size: 1rem;
+    font-size: 1.125rem;
 }
 
 .header .paragraph::first-letter {
@@ -132,7 +117,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-width: 31.25rem;
+    width: 100%;
 }
 
 .title-section {
@@ -140,22 +125,46 @@ body {
 }
 
 .article {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: aqua;
     padding: 1.15rem 1rem;
     border-radius: 0.65rem;
+    height: 3rem;
+}
+
+.article::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: inherit;
+    border: 0.095rem solid var(--dark-gray-blue);
+    border-radius: 0.65rem;
+    clip-path: polygon(0 0, 6.75% 0, 6.75% 100%, 0 100%, 0 75%, 25% 75%, 25% 25%, 0 25%);
+}
+
+.article::after {
+    content: "";
+    position: absolute;
+    right:  0;
+    width: 50%;
+    height: inherit;
+    border: 0.0945rem solid var(--dark-gray-blue);
+    border-radius: 0.65rem;
+    clip-path: polygon(100% 0, 93.25% 0, 93.25% 100%, 100% 100%, 100% 75%, 75% 75%, 75% 25%, 100% 25%);
 }
 
 .article p {
-    font-family: var(--font-500);
+    font-family: var(--font-800);
     color: var(--dark-gray-blue);
+    font-size: 1.125rem;
 }
 
 .article span {
-    font-family: var(--font-700);
-    color: var(--persian-blue-circle);
+    opacity: 0.7;
 }
 
 .article header {
@@ -165,15 +174,10 @@ body {
 
 .article header h3 {
     text-transform: capitalize;
-    font-family: var(--font-500);
+    font-family: var(--font-700);
     font-weight: normal;
-    font-size: 1.1rem;
+    font-size: 1.125rem;
 }
-
-/* --light-red: hsl(0deg 100% 67%);
---orangey-yellow: hsl(39deg 100% 56%);
---green-teal: hsl(166deg 100% 37%);
---cobalt-blue: hsl(234deg 85% 45%); */
 
 .article:first-of-type {
     background-color: hsl(0deg 100% 67% / 10%);
@@ -199,7 +203,7 @@ body {
     color: var(--orangey-yellow);
 }
 
-.article:nth-of-type(3) h3 {
+.article:nth-of-type(3) h3 { 
     color: var(--green-teal);
 }
 
@@ -213,8 +217,87 @@ body {
     background-color: var(--dark-gray-blue);
     color: #fff;
     font-family: var(--font-700);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 1rem 0;
     border-radius: 3rem;
 }
 
+.btn-continue:hover {
+    cursor: pointer;
+    background: var(--gradient-1);
+}
+
+@media screen and (min-width: 40rem) {
+    body {
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header {
+        min-height: 31.25rem;
+        width: 23rem;
+        border-radius: 2.25rem;
+        position: relative;
+        z-index: 5;
+        margin: 2rem 0 2rem 2rem;
+        justify-content: space-evenly;
+        gap: 0;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .main {
+        padding: 2.5rem;
+        margin: 2rem 2rem 2rem 0;
+        position: relative;
+        min-height: 31.25rem;
+        width: 23rem;
+        background-color: var(--white);
+        box-shadow: 1rem 1rem 3.125rem -1rem var(--light-lavender);
+        border-top-right-radius: 2.25rem;
+        border-bottom-right-radius: 2.25rem;
+    }
+
+    .title-section {
+        margin-bottom: 2.25rem;
+    }
+
+    .main::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -6.25rem;
+        background-color: inherit;
+        width: 6.25rem;
+        min-height: inherit;
+    }
+
+    .section {
+        height: calc(31.25rem - 5rem);
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .btn-continue {
+        margin-top: 2.25rem;
+    }
+
+    .text {
+        font-size: 1.5rem;
+    }
+
+    .result-container {
+        height: 12.5rem;
+        width: 12.5rem;
+        background: var(--gradient-2);
+        font-size: 1.2rem;
+    }
+
+    .result-container span {
+        font-size: 4.5rem;
+    }
+}
